@@ -202,14 +202,25 @@ const AboutSection = () => {
   return (
     <section id="about" className="bg-lush-dark text-lush-cream py-24 md:py-32 border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <FadeIn className="flex flex-col justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <FadeIn className="flex flex-col">
              <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-widest leading-tight mb-6">
                About <br/><span className="text-lush-accent font-serif italic">U</span>SHOPAL
              </h2>
-             <div className="h-1 w-24 bg-lush-accent mb-8"></div>
+             <div className="h-1 w-24 bg-lush-accent mb-12"></div>
+             
+             {/* New Image Added Here */}
+             <div className="w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden relative grayscale-[30%] hover:grayscale-0 transition-all duration-700">
+               <img 
+                 src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=1200&auto=format&fit=crop" 
+                 alt="Luxury Fashion Model" 
+                 className="w-full h-full object-cover"
+               />
+               <div className="absolute inset-0 bg-lush-dark/10"></div>
+             </div>
           </FadeIn>
-          <FadeIn delay={200} className="flex flex-col justify-center space-y-10">
+
+          <FadeIn delay={200} className="flex flex-col justify-center space-y-10 md:pt-24">
             <h3 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-white/90">
               Growth <br/> Partners
             </h3>
@@ -239,17 +250,38 @@ const BrandPortfolioIntro = () => {
   return (
     <section className="bg-lush-cream py-24 md:py-32">
       <div className="container mx-auto px-6 md:px-12">
-        <FadeIn>
-          <h2 className="text-5xl md:text-7xl font-bold uppercase text-lush-dark mb-6 tracking-tight">
-            Our Brand <br/> Portfolio
-          </h2>
-          <p className="text-xl md:text-2xl font-serif italic text-lush-dark/70 border-b border-lush-dark pb-8 inline-block max-w-3xl leading-normal">
-            Direct Equity Ownership in 4 Global Luxury Beauty Brands
-          </p>
-          <div className="mt-8 text-right">
-               <a href="#" className="text-sm font-bold uppercase tracking-widest border-b border-lush-accent pb-1 hover:text-lush-accent transition-colors">View All 10 Brands Across APAC</a>
-          </div>
-        </FadeIn>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <FadeIn>
+            <h2 className="text-5xl md:text-7xl font-bold uppercase text-lush-dark mb-6 tracking-tight">
+              Our Brand <br/> Portfolio
+            </h2>
+            <p className="text-xl md:text-2xl font-serif italic text-lush-dark/70 border-b border-lush-dark pb-8 inline-block max-w-xl leading-normal">
+              Direct Equity Ownership in 4 Global Luxury Beauty Brands
+            </p>
+            <div className="mt-12">
+                <a href="#" className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-lush-accent transition-colors">
+                  View All 10 Brands Across APAC
+                  <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform"/>
+                </a>
+            </div>
+          </FadeIn>
+
+          {/* New Abstract Image Added Here */}
+          <FadeIn delay={200}>
+            <div className="relative aspect-square md:aspect-[5/4] overflow-hidden group">
+              <img 
+                src="https://images.unsplash.com/photo-1550614000-4b9519e00766?q=80&w=1200&auto=format&fit=crop" 
+                alt="Cream Texture Abstract" 
+                className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-[1.5s]"
+              />
+              {/* Overlay Text */}
+              <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-sm p-4 md:p-6 max-w-xs shadow-lg transform translate-y-4 group-hover:translate-y-0 opacity-90 group-hover:opacity-100 transition-all duration-500">
+                <p className="text-xs font-bold tracking-widest uppercase mb-1 text-lush-dark">Curated Excellence</p>
+                <p className="font-serif italic text-lush-dark/60 text-sm">Defining the future standard of luxury beauty through strategic selection.</p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );
@@ -374,9 +406,12 @@ const BrandsGrid = () => {
 
 const MetricsSection = () => {
   return (
-    <section className="bg-lush-cream border-t border-lush-dark/10 py-24 overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <section className="bg-lush-cream border-t border-lush-dark/10 py-24 overflow-hidden relative">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#281E15 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 items-center">
           
           {/* Metric 1 */}
           <FadeIn className="flex flex-col space-y-6">
@@ -386,14 +421,24 @@ const MetricsSection = () => {
             <div className="flex items-baseline text-lush-dark">
               <span className="text-4xl mr-4 opacity-50 font-serif italic">&gt;</span>
               <span className="text-xl mr-2 font-bold">¥</span>
-              <span className="text-8xl md:text-[8rem] leading-none font-serif">5000</span>
+              <span className="text-8xl md:text-[7rem] lg:text-[6rem] xl:text-[7rem] leading-none font-serif">5000</span>
             </div>
-            <div className="pt-8">
-               <div className="w-full h-[1px] bg-lush-dark/10"></div>
+            <div className="pt-4">
                <div className="flex items-center gap-4 mt-6">
                  <div className="text-5xl font-serif text-lush-accent">BC</div>
                  <div className="text-xs uppercase tracking-widest opacity-60">Bonnie & Clyde <br/> Developed in 2020</div>
                </div>
+            </div>
+          </FadeIn>
+
+          {/* Center Image - New */}
+          <FadeIn delay={100} className="hidden lg:block h-full">
+            <div className="h-full min-h-[400px] w-full relative overflow-hidden rounded-sm">
+                <img 
+                    src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop" 
+                    alt="Cosmetics Art" 
+                    className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
+                />
             </div>
           </FadeIn>
 
@@ -403,17 +448,17 @@ const MetricsSection = () => {
               CBEC Shanghai Delivery
             </h4>
             <div className="flex items-baseline text-lush-dark">
-              <span className="text-8xl md:text-[8rem] leading-none font-serif">4</span>
-              <span className="text-4xl md:text-6xl font-bold ml-4 font-serif italic text-lush-accent">Hours</span>
+              <span className="text-8xl md:text-[7rem] lg:text-[6rem] xl:text-[7rem] leading-none font-serif">4</span>
+              <span className="text-4xl md:text-5xl font-bold ml-4 font-serif italic text-lush-accent">Hours</span>
             </div>
-            <div className="pt-8 space-y-2">
-               <p className="text-lg underline underline-offset-4 decoration-lush-accent/30 hover:decoration-lush-accent text-lush-dark/80 transition-all">
+            <div className="pt-4 space-y-2">
+               <p className="text-base lg:text-lg underline underline-offset-4 decoration-lush-accent/30 hover:decoration-lush-accent text-lush-dark/80 transition-all cursor-pointer">
                  Bonnie & Clyde developed in 2020
                </p>
-               <p className="text-lg underline underline-offset-4 decoration-lush-accent/30 hover:decoration-lush-accent text-lush-dark/80 transition-all">
+               <p className="text-base lg:text-lg underline underline-offset-4 decoration-lush-accent/30 hover:decoration-lush-accent text-lush-dark/80 transition-all cursor-pointer">
                  has over 10M user base
                </p>
-               <p className="text-lg underline underline-offset-4 decoration-lush-accent/30 hover:decoration-lush-accent text-lush-dark/80 transition-all">
+               <p className="text-base lg:text-lg underline underline-offset-4 decoration-lush-accent/30 hover:decoration-lush-accent text-lush-dark/80 transition-all cursor-pointer">
                  in the coveted 28-35yr old range
                </p>
             </div>
