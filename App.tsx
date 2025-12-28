@@ -430,15 +430,25 @@ const SustainabilitySection = () => {
     <section className="relative bg-lush-dark text-lush-cream overflow-hidden">
       {/* Top Banner Text */}
       <div className="container mx-auto px-6 md:px-12 py-20 relative z-10">
-        <FadeIn className="flex flex-col md:flex-row justify-between items-start">
-          <h2 className="text-6xl md:text-[10vw] leading-none font-bold uppercase tracking-tight mb-8 md:mb-0">
+        <FadeIn className="flex flex-col xl:flex-row justify-between items-start xl:items-end gap-12">
+          {/* Title Section */}
+          <h2 className="text-6xl md:text-[10vw] leading-none font-bold uppercase tracking-tight whitespace-nowrap">
             Sustain<span className="text-lush-accent">ability</span>
           </h2>
-          <div className="max-w-md text-right md:text-left md:mt-4">
-             <p className="text-sm md:text-base font-light opacity-80 leading-relaxed mb-4">
+
+          {/* Text Section - Horizontal Layout */}
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 pb-2 xl:pb-4 w-full xl:w-auto">
+             <p className="text-sm md:text-lg font-light opacity-80 leading-relaxed max-w-2xl text-left border-l border-white/20 pl-6 md:border-l-0 md:pl-0">
                Embracing the movement towards conscious beauty, we ensure <span className="underline decoration-lush-accent underline-offset-4">our unwavering commitment to sustainability resonates</span> with the values of the emerging generation.
              </p>
-             <p className="text-xs uppercase tracking-widest text-lush-accent">Ethically Sourced Products</p>
+             
+             {/* Divider + Tag */}
+             <div className="flex items-center gap-4 shrink-0 pl-6 md:pl-0">
+                <div className="w-12 h-[1px] bg-lush-accent hidden md:block"></div>
+                <p className="text-xs font-bold uppercase tracking-widest text-lush-accent whitespace-nowrap">
+                  Ethically Sourced
+                </p>
+             </div>
           </div>
         </FadeIn>
       </div>
